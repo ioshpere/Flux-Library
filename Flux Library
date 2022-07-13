@@ -91,6 +91,10 @@ UserInputService.InputBegan:Connect(function(input)
 	end
 end)
 
+if game:GetService("CoreGui"):FindFirstChild("FluxLib") then
+	game.CoreGui.FluxLib:Destroy()
+end
+
 function Flux:Window(text, bottom,mainclr,toclose)
 	CloseBind = toclose or Enum.KeyCode.RightControl
 	PresetColor = mainclr or Color3.fromRGB(66, 134, 255)
