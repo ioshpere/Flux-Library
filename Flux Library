@@ -85,12 +85,6 @@ local function MakeDraggable(topbarobject, object)
 	)
 end
 
-UserInputService.InputBegan:Connect(function(input)
-	if input.Keycode == Enum.Keycode.Delete then
-		FluxLib:Destroy()
-	end
-end)
-
 if game:GetService("CoreGui"):FindFirstChild("FluxLib") then
 	game.CoreGui.FluxLib:Destroy()
 end
@@ -2564,4 +2558,11 @@ function Flux:Window(text, bottom,mainclr,toclose)
 	end
 	return Tabs
 end
-return Flux
+
+UserInputService.InputBegan:Connect(function(input)
+	if input.Keycode == Enum.Keycode.Delete then
+		FluxLib:Destroy()
+	end
+end)
+
+return Library
